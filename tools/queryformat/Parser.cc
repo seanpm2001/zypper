@@ -97,7 +97,7 @@ namespace zypp::qf
         tok_string =
           string_value           [ px::bind(&String::value, _val) = _1 ];
 
-        tag_fieldw	%= -qi::char_('-') >> *qi::char_('0') >> *qi::digit;
+        tag_fieldw	%= -qi::char_('-') >> +qi::digit;
 #if USE_TAGNAME_IDS
         tag_name        %= no_case[ attribute ];
 #else
